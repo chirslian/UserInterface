@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BA7F1F11AFB8B6F00ED8658 /* 22-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BA7F1F01AFB8B6F00ED8658 /* 22-1.jpg */; };
+		6BA7F1F51AFB8CDA00ED8658 /* gold-mayor-icon in Resources */ = {isa = PBXBuildFile; fileRef = 6BA7F1F41AFB8CDA00ED8658 /* gold-mayor-icon */; };
+		6BA7F1F71AFB8F7E00ED8658 /* medialoot-round-social-icons in Resources */ = {isa = PBXBuildFile; fileRef = 6BA7F1F61AFB8F7E00ED8658 /* medialoot-round-social-icons */; };
+		6BA7F1FA1AFB902500ED8658 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA7F1F91AFB902500ED8658 /* MyButton.m */; };
 		6BB8320D1AFA43040054C439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8320C1AFA43040054C439 /* main.m */; };
 		6BB832101AFA43040054C439 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8320F1AFA43040054C439 /* AppDelegate.m */; };
 		6BB832131AFA43040054C439 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB832121AFA43040054C439 /* ViewController.m */; };
@@ -28,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BA7F1F01AFB8B6F00ED8658 /* 22-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "22-1.jpg"; path = "../../../../Downloads/22-1.jpg"; sourceTree = "<group>"; };
+		6BA7F1F41AFB8CDA00ED8658 /* gold-mayor-icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "gold-mayor-icon"; path = "../../../../Downloads/gold-mayor-icon"; sourceTree = "<group>"; };
+		6BA7F1F61AFB8F7E00ED8658 /* medialoot-round-social-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "medialoot-round-social-icons"; path = "../../../../Downloads/medialoot-round-social-icons"; sourceTree = "<group>"; };
+		6BA7F1F81AFB902500ED8658 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		6BA7F1F91AFB902500ED8658 /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 		6BB832071AFA43040054C439 /* UIButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB8320B1AFA43040054C439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BB8320C1AFA43040054C439 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +103,8 @@
 				6BB832301AFA4C020054C439 /* MyClass.h */,
 				6BB832311AFA4C020054C439 /* MyClass.m */,
 				6BB8320A1AFA43040054C439 /* Supporting Files */,
+				6BA7F1F81AFB902500ED8658 /* MyButton.h */,
+				6BA7F1F91AFB902500ED8658 /* MyButton.m */,
 			);
 			path = UIButtonDemo;
 			sourceTree = "<group>";
@@ -101,6 +112,9 @@
 		6BB8320A1AFA43040054C439 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BA7F1F61AFB8F7E00ED8658 /* medialoot-round-social-icons */,
+				6BA7F1F41AFB8CDA00ED8658 /* gold-mayor-icon */,
+				6BA7F1F01AFB8B6F00ED8658 /* 22-1.jpg */,
 				6BB8320B1AFA43040054C439 /* Info.plist */,
 				6BB8320C1AFA43040054C439 /* main.m */,
 			);
@@ -205,7 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB832161AFA43040054C439 /* Main.storyboard in Resources */,
+				6BA7F1F11AFB8B6F00ED8658 /* 22-1.jpg in Resources */,
 				6BB8321B1AFA43040054C439 /* LaunchScreen.xib in Resources */,
+				6BA7F1F51AFB8CDA00ED8658 /* gold-mayor-icon in Resources */,
+				6BA7F1F71AFB8F7E00ED8658 /* medialoot-round-social-icons in Resources */,
 				6BB832181AFA43040054C439 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +245,7 @@
 				6BB832131AFA43040054C439 /* ViewController.m in Sources */,
 				6BB832101AFA43040054C439 /* AppDelegate.m in Sources */,
 				6BB8320D1AFA43040054C439 /* main.m in Sources */,
+				6BA7F1FA1AFB902500ED8658 /* MyButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +442,7 @@
 				6BB8322C1AFA43040054C439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BB8322D1AFA43040054C439 /* Build configuration list for PBXNativeTarget "UIButtonDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +451,7 @@
 				6BB8322F1AFA43040054C439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
