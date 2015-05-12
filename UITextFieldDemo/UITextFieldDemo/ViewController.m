@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    UITextField *_text2;
+    UIButton *_btn;
+}
 
 @end
 
@@ -62,33 +66,120 @@
     text.clearButtonMode = UITextFieldViewModeAlways;
     [self.view addSubview:text];
     
-    //text2
-    UITextField *text2 = [[UITextField alloc]initWithFrame:CGRectMake(20, 200, 300, 150)];
-    text2.borderStyle = UITextBorderStyleRoundedRect;
-    text2.backgroundColor = [UIColor yellowColor];
+    //
+    _text2 = [[UITextField alloc]initWithFrame:CGRectMake(20, 200, 300, 150)];
+    _text2.borderStyle = UITextBorderStyleRoundedRect;
+    _text2.backgroundColor = [UIColor yellowColor];
     //开始编辑的时候自动清楚下内容
-    text2.clearsOnBeginEditing =  YES;
-    
+    _text2.clearsOnBeginEditing =  YES;
     //内容对其方式,垂直居中,等等其他
-    text2.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    
+    _text2.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     //文字对其方式,以下设置为中间对其
-    text2.textAlignment = NSTextAlignmentCenter;
-
-    
+    _text2.textAlignment = NSTextAlignmentCenter;
     //设置内容的滚动
-    text2.adjustsFontSizeToFitWidth = YES;
+    _text2.adjustsFontSizeToFitWidth = YES;
     //设置文字最小字号
     text.minimumFontSize = 1;
-    
     //设置首字符是否大写
-    text2.autocapitalizationType = UITextAutocapitalizationTypeWords;
-    
+    _text2.autocapitalizationType = UITextAutocapitalizationTypeWords;
     //设置 return 的样式
-    text2.returnKeyType = UIReturnKeyJoin;
+    _text2.returnKeyType = UIReturnKeyJoin;
+    _text2.delegate = self;
+    _text2.clearButtonMode = UITextFieldViewModeUnlessEditing;
+    [self.view addSubview:_text2];
     
-    [self.view addSubview:text2];
+    //添加一个控制器,点击控件外的回收键盘
+    UIControl *control = [[UIControl alloc]init];
+    control.frame = [[UIScreen mainScreen]bounds];
+    //关联点击触发响应
+    [control addTarget:self action:@selector(controlClicked) forControlEvents:UIControlEventTouchUpInside];
+    //添加到视图上,这时候control 在视图的最上方,点击事件text2接受不到,因此需要将控制器放在 text2以下的,或者最底层
+    [self.view addSubview:control];
+    //将控制器放置在控件视图下
+    [self.view insertSubview:control belowSubview:_text2];
+    //将控制器放置在最底层
+    //[self.view sendSubviewToBack:control];
+    
+    //在弹出的键盘会挡住底部的按钮,因此在弹出键盘的时候,有必要将按钮往上移动,键盘收起来的时候在放回原处
+    _btn= [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _btn.frame =CGRectMake(20, 500, 200, 50);
+    _btn.backgroundColor = [UIColor yellowColor];
+    [_btn setTitle:@"Login" forState:UIControlStateNormal];
+    [self.view addSubview:_btn];
+    
+    //关于键盘的弹出和收起的通知
+    //订阅键盘升起的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow) name:UIKeyboardWillShowNotification object:nil];
+    //订阅键盘回收的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
 }
+
+-(void )keyboardWillShow
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        _btn.frame = CGRectMake(20, 360, 200, 50);
+    } completion:^(BOOL finished) {
+    }];
+}
+-(void)keyboardWillHide
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        _btn.frame = CGRectMake(20, 500, 200, 50);
+    } completion:^(BOOL finished) {
+    }];
+}
+
+- (void) controlClicked
+{
+    [_text2 resignFirstResponder];
+}
+
+// return NO to disallow editing.
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    //允许编辑
+    return YES;
+}
+// became first responder
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    //开始编辑
+    NSLog(@"Did begin editing");
+}
+// return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    //允许结束编辑
+    return YES;
+}
+// may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    //结束编辑时调用
+    NSLog(@"end editing");
+}
+
+//// return NO to not change text
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    
+//}
+// called when clear button pressed. return NO to ignore (no notifications)
+- (BOOL)textFieldShouldClear:(UITextField *)textField
+{
+    //允许按清除按钮清除信息
+    NSLog(@"allow to clear");
+    return YES;
+}
+// called when 'return' key pressed. return NO to ignore
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    //允许返回,放弃编辑
+    NSLog(@"allow to return");
+    [textField resignFirstResponder];//回收键盘
+    return YES;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
