@@ -37,6 +37,37 @@
     }];
 }
 
+//窗体在实例化的时候调用
+- (void)loadView
+{
+    [super loadView];
+    NSLog(@"sub ViewControl **load View");
+}
+//窗体在显示之前调用
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear: animated];
+    NSLog(@"sub ViewController -- view will appear");
+}
+//窗体从显示之前到完全显示后调用
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"sub ViewController -- view did appear");
+}
+//窗体即将消失
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    NSLog(@"sub ViewController -- view will disapper");
+}
+//窗体完全消失时调用
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    NSLog(@"sub ViewController -- view did disappear");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
