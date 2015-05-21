@@ -47,8 +47,10 @@
             NSLog(@"Left button");
             break;
         case 2:
+        {
             NSLog(@"start button");
             [self.navigationController pushViewController:_vc2 animated:YES];
+        }
             
         default:
             break;

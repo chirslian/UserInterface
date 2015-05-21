@@ -15,6 +15,8 @@
 		6B8341761B0A250000230015 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8341741B0A250000230015 /* LaunchScreen.xib */; };
 		6B8341821B0A250100230015 /* UINavigationControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8341811B0A250100230015 /* UINavigationControllerDemoTests.m */; };
 		6B8341901B0A2A8900230015 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B83418F1B0A2A8900230015 /* ViewController2.m */; };
+		6BEE39BA1B0E0D66002A076E /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE39B91B0E0D66002A076E /* ViewController3.m */; };
+		6BEE39BD1B0E1824002A076E /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE39BC1B0E1824002A076E /* ViewController4.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		6B8341811B0A250100230015 /* UINavigationControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UINavigationControllerDemoTests.m; sourceTree = "<group>"; };
 		6B83418E1B0A2A8900230015 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		6B83418F1B0A2A8900230015 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		6BEE39B81B0E0D66002A076E /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		6BEE39B91B0E0D66002A076E /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		6BEE39BB1B0E1824002A076E /* ViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		6BEE39BC1B0E1824002A076E /* ViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,10 @@
 				6B8341651B0A250000230015 /* Supporting Files */,
 				6B83418E1B0A2A8900230015 /* ViewController2.h */,
 				6B83418F1B0A2A8900230015 /* ViewController2.m */,
+				6BEE39B81B0E0D66002A076E /* ViewController3.h */,
+				6BEE39B91B0E0D66002A076E /* ViewController3.m */,
+				6BEE39BB1B0E1824002A076E /* ViewController4.h */,
+				6BEE39BC1B0E1824002A076E /* ViewController4.m */,
 			);
 			path = UINavigationControllerDemo;
 			sourceTree = "<group>";
@@ -228,6 +238,8 @@
 				6B8341901B0A2A8900230015 /* ViewController2.m in Sources */,
 				6B83416B1B0A250000230015 /* AppDelegate.m in Sources */,
 				6B8341681B0A250000230015 /* main.m in Sources */,
+				6BEE39BA1B0E0D66002A076E /* ViewController3.m in Sources */,
+				6BEE39BD1B0E1824002A076E /* ViewController4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +436,7 @@
 				6B8341871B0A250100230015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B8341881B0A250100230015 /* Build configuration list for PBXNativeTarget "UINavigationControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +445,7 @@
 				6B83418A1B0A250100230015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
